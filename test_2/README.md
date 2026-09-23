@@ -123,6 +123,12 @@
 
 <img src="media/image2.png" style="width:7.61863in;height:2.04819in" />
 
+
+
+
+### Sequence Diagram
+
+
 <img src="media/image4.png" style="width:7.90361in;height:2.36897in" />
 
 
