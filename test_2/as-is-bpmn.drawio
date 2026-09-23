@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="ZKtovz5zBS0Tvg22pSk8" name="Page-2">
+    <mxGraphModel dx="2120" dy="1351" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TDlwYisCs5UviCjKITjE-1" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=40;horizontalStack=0;html=1;" value="AS IS" vertex="1">
+          <mxGeometry height="623" width="2080" x="22" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="TDlwYisCs5UviCjKITjE-2" parent="TDlwYisCs5UviCjKITjE-1" style="swimlane;startSize=40;horizontal=0;html=1;" value="&lt;span style=&quot;font-size: 13px; text-align: left; white-space: normal;&quot;&gt;Поставщик&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="2080" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtXz1BVXbGVOw8CEdz_4-1" parent="TDlwYisCs5UviCjKITjE-2" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="Передаёт признак маркировки (API)" vertex="1">
+          <mxGeometry height="80" width="120" x="80" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="TDlwYisCs5UviCjKITjE-3" parent="TDlwYisCs5UviCjKITjE-1" style="swimlane;startSize=40;horizontal=0;html=1;" value="&lt;span style=&quot;font-size: 13px; text-align: left; white-space: normal;&quot;&gt;Система B2B&lt;/span&gt;" vertex="1">
+          <mxGeometry height="120" width="2080" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ght8bon5k3GTv5V62iqD-1" parent="TDlwYisCs5UviCjKITjE-3" style="rounded=1;whiteSpace=wrap;html=1;" value="Позиция всё ещё привязана&lt;br/&gt;к старому артикулу" vertex="1">
+          <mxGeometry height="60" width="120" x="230" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ght8bon5k3GTv5V62iqD-2" edge="1" parent="TDlwYisCs5UviCjKITjE-1" source="ZtXz1BVXbGVOw8CEdz_4-1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="ght8bon5k3GTv5V62iqD-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="100" />
+            </Array>
+            <mxPoint x="340" y="230" as="sourcePoint" />
+            <mxPoint x="390" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-69" edge="1" parent="TDlwYisCs5UviCjKITjE-1" source="ght8bon5k3GTv5V62iqD-1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="OaQd8w1b0_YZlcu1iW4L-51" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="463" y="210" />
+            </Array>
+            <mxPoint x="778" y="448" as="sourcePoint" />
+            <mxPoint x="828" y="398" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TDlwYisCs5UviCjKITjE-4" parent="TDlwYisCs5UviCjKITjE-1" style="swimlane;startSize=40;horizontal=0;html=1;" value="&lt;span style=&quot;font-size: 13px; text-align: left; white-space: normal;&quot;&gt;Контент-менеджер&lt;/span&gt;" vertex="1">
+          <mxGeometry height="343" width="2080" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-51" parent="TDlwYisCs5UviCjKITjE-4" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;" value="Периодически проверяет непривязанные позиции" vertex="1">
+          <mxGeometry height="60" width="200" x="363" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-52" parent="TDlwYisCs5UviCjKITjE-4" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;" value="Артикул каталога пуст?" vertex="1">
+          <mxGeometry height="70" width="70" x="748" y="113" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-59" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="OaQd8w1b0_YZlcu1iW4L-52">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="698" y="148" />
+              <mxPoint x="698" y="148" />
+            </Array>
+            <mxPoint x="568" y="128" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-60" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="OaQd8w1b0_YZlcu1iW4L-51" value="Нет">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="783" y="293" />
+              <mxPoint x="458" y="293" />
+              <mxPoint x="458" y="178" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-53" parent="TDlwYisCs5UviCjKITjE-4" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;" value="Есть уже маркированный артикул на модель?" vertex="1">
+          <mxGeometry height="80" width="80" x="938" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-61" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-53" value="Да">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-54" parent="TDlwYisCs5UviCjKITjE-4" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;" value="Связать позицию с существующим артикулом" vertex="1">
+          <mxGeometry height="42" width="200" x="1188" y="28" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-62" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="OaQd8w1b0_YZlcu1iW4L-54" value="Да">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-55" parent="TDlwYisCs5UviCjKITjE-4" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;" value="Создать новый маркированный артикул" vertex="1">
+          <mxGeometry height="60" width="200" x="1178" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-63" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-55" value="Нет">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="978" y="268" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-66" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-57" parent="TDlwYisCs5UviCjKITjE-4" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;" value="Проверить результат: позиция у нового, отсутствует у старого" vertex="1">
+          <mxGeometry height="60" width="220" x="1708" y="153" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-58" parent="TDlwYisCs5UviCjKITjE-4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=3;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="1988" y="158" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-67" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-56" parent="TDlwYisCs5UviCjKITjE-4" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=12;" value="Включить признак «Честный ЗНАК»" vertex="1">
+          <mxGeometry height="60" width="200" x="1458" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-64" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OaQd8w1b0_YZlcu1iW4L-65" edge="1" parent="TDlwYisCs5UviCjKITjE-4" source="OaQd8w1b0_YZlcu1iW4L-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" target="OaQd8w1b0_YZlcu1iW4L-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
