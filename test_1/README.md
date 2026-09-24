@@ -1,6 +1,6 @@
 # Задание 1
 
-Допишите в BPMN диаграмме недостающую информацию в виде вопросов
+Постройте и допишите в BPMN диаграмме недостающую информацию в виде вопросов
 <img width="1231" height="909" alt="test_ex1 drawio" src="https://github.com/user-attachments/assets/6f2f9e89-a348-4d91-af7d-c7fcad37e06a" />
 
 
