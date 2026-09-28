@@ -30,63 +30,9 @@
 
 ### 1.2. Схема взаимодействия (целевой процесс)
 
-``` @startuml
-autonumber
 
-actor "Клиент" as C
-participant "Сайт компании" as W
-participant "Бронирование" as P
-participant "Платёжная система" as PG
-participant "Поставщик питания" as S
-participant "Наземная служба" as G
-actor "Бортпроводник" as F
+<img src="media/image1.png" style="width:7.61863in;height:2.04819in" />
 
-C -> W: Номер бронирования, фамилия
-W -> P: Запрос данных брони
-P --> W: Рейс, дата/время вылета,\nпассажир, место, статус билета
-
-W -> W: Проверка: до вылета ≥ 24 ч,\nрейс активен, есть меню
-W --> C: Меню рейса (позиции, цены,\nаллергены, остатки)
-
-C -> W: Выбор позиций
-W -> PG: Запрос оплаты (сумма, ID заказа)
-PG --> W: Результат оплаты
-W --> C: Подтверждение + чек
-
-opt Изменение / отмена (крайний срок - 24 ч)
-    C -> W: Изменить / отменить заказ
-    W -> PG: Возврат (при отмене)
-end
-
-note over W
-Крайний срок вылет − 24 ч,
-Прием заказов закрыт
-end note
-
-W -> S: Заявка по рейсу
-S --> W: Подтверждение (принято /\nотклонено по позициям)
-
-opt Отклонено
-    W -> C: Уведомление + возврат / замена
-end
-
-opt Изменения по рейсу (перенос, смена самолета, отмена)
-    W -> S: Обновление заявки / отмена
-    W -> C: Уведомление
-end
-
-S -> G: Доставка питания в аэропорт\n(к согласованному времени)
-
-G -> F: Передача питания на борт
-
-F -> C: Выдача заказа в полете
-F -> W: Отметка «выдано / не выдано»
-
-W -> S: Акт выполненных услуг
-W -> PG: Возвраты (если есть)
-
-@enduml
-```
 
 https://www.plantuml.com/plantuml/uml/ZLL1InjT5Ds_Nt5nPVYKm4TNBefWCNGNo28RDwdDGgY9nDXr9ccr4jjKARH8gosbgsucsj79J381Vy5xVy5VqdFlcumlqr0gI39lxhtdddFFkrdVRzTQxOFT5wfsq6us3dQVrLjArRRRpHOjwNCTwr07UcAwIrJRfmsrX-YTxPszMgEDzz-qhqUcIphIYHxhAHudI0Wbk9eBFZKTHE6zV5wbiO74bdEnbm3sJTUSwXj4-MP0naEYPxew091laqf_P2KIukihSupQ4Q6ba0y4TY1PbLpI5xozbQePK6nwm1scCALCZbFKxw3Sr3B0_o_X44dSfb8RjFgOgck4egn7O3gaXujecy4AcLVuFaPwpC-gohbbv7x4iI0OZm30yHFJDw-TKgfCgodILxG-CjwAX3BL8iXtc0-uu6iVvGC-Nzbgy80Wa8UQDzmFaj2aI9QW7toAw3q0WtquorJIcw1TfYJ033FtrnWrcOEX--CVzFyZCaS0H9HqHq2Cy3RaL3q1hg2Q4sa0zDun130sKF6pFQ5PCceke_C4KmhD8TiBlHvAK9z9-O2EfQFhz91qCYE3BiE2CvWpT3haCT9SoL4gVoclVu8mQyK-BQDe3msF8IOzVKB8zba5_YoeScbk9hS8ZSs9xMAkZaFraYs442le3SGCxAMW_o0W7YAbcdjjqf-08Kfb0KKcsRM7eb242hYDydg4OSga8bgrmoWembygWrilb36urUoHmqvI7_Gv4zrWCc6sB5g5RdvGKFN6SwKQpNQTcY_hBQm2VRwulGVhqFsRizGuIdmMiebTaM4y-mYgk11THY46IGrQiSCp0-Y939bmvYBJKnKxeB_gdjA1ZGPyAwW8WoLYenWvLlx4LdOD1Cnn8PtLHJuyqqzc_frHWSWB8dRcZMDNrwAbciwNgIwq0f3pF9c3y19mu_7DdjN1LocQP5jXpaRM9PcO5tg8KyZkD0hqcS9XpeJ_mDFog70CM-b3jh1bOhbr3Ka8O6_5AbExUxSQS3fOuEHQBfINBTK9Gu7-RFzPJ4obn72RCdQHHJRbqG8u5WYK1KYfJM5YTqQMujvvwM-QQHdOZ2eB9wBWK5ZT_HINsrKEIp5GGExPNUnO-3slIllQ5aTqzXjWUkdlqxLQV2DbKG4QKJhCzcn1hKDv_Cp_1W00
 
