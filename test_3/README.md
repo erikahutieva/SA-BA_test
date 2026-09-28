@@ -28,7 +28,21 @@
 | Бортпроводник | Принимает заказы на борту, выдаёт, фиксирует выдачу |
 | Бухгалтерия | Расчеты с поставщиком, возвраты |
 
-### 1.2. Схема взаимодействия (целевой процесс)
+### 1.2. Основной сценарий
+Клиент на сайте вводит номер бронирования и фамилию.
+Сайт запрашивает данные о бронировании.
+Проверяется, что рейс существует и до вылета осталось не менее 24 часов.
+Клиент выбирает питание и напитки.
+Система рассчитывает стоимость и создаёт заказ.
+Клиент оплачивает заказ.
+После успешной оплаты заказ передаётся поставщику.
+Поставщик подтверждает получение заказа.
+Поставщик готовит заказ и доставляет его в аэропорт к установленному времени.
+Наземная служба принимает питание и передаёт информацию/заказ на борт.
+Бортпроводник получает список заказов и выдаёт питание пассажирам.
+Заказ переводится в статус «Выдан».
+
+### 1.3. Диаграмма последовательности
 
 
 <img src="media/image1.png" style="width:7.61863in;height:2.04819in" />
@@ -36,7 +50,7 @@
 
 https://www.plantuml.com/plantuml/uml/ZLL1InjT5Ds_Nt5nPVYKm4TNBefWCNGNo28RDwdDGgY9nDXr9ccr4jjKARH8gosbgsucsj79J381Vy5xVy5VqdFlcumlqr0gI39lxhtdddFFkrdVRzTQxOFT5wfsq6us3dQVrLjArRRRpHOjwNCTwr07UcAwIrJRfmsrX-YTxPszMgEDzz-qhqUcIphIYHxhAHudI0Wbk9eBFZKTHE6zV5wbiO74bdEnbm3sJTUSwXj4-MP0naEYPxew091laqf_P2KIukihSupQ4Q6ba0y4TY1PbLpI5xozbQePK6nwm1scCALCZbFKxw3Sr3B0_o_X44dSfb8RjFgOgck4egn7O3gaXujecy4AcLVuFaPwpC-gohbbv7x4iI0OZm30yHFJDw-TKgfCgodILxG-CjwAX3BL8iXtc0-uu6iVvGC-Nzbgy80Wa8UQDzmFaj2aI9QW7toAw3q0WtquorJIcw1TfYJ033FtrnWrcOEX--CVzFyZCaS0H9HqHq2Cy3RaL3q1hg2Q4sa0zDun130sKF6pFQ5PCceke_C4KmhD8TiBlHvAK9z9-O2EfQFhz91qCYE3BiE2CvWpT3haCT9SoL4gVoclVu8mQyK-BQDe3msF8IOzVKB8zba5_YoeScbk9hS8ZSs9xMAkZaFraYs442le3SGCxAMW_o0W7YAbcdjjqf-08Kfb0KKcsRM7eb242hYDydg4OSga8bgrmoWembygWrilb36urUoHmqvI7_Gv4zrWCc6sB5g5RdvGKFN6SwKQpNQTcY_hBQm2VRwulGVhqFsRizGuIdmMiebTaM4y-mYgk11THY46IGrQiSCp0-Y939bmvYBJKnKxeB_gdjA1ZGPyAwW8WoLYenWvLlx4LdOD1Cnn8PtLHJuyqqzc_frHWSWB8dRcZMDNrwAbciwNgIwq0f3pF9c3y19mu_7DdjN1LocQP5jXpaRM9PcO5tg8KyZkD0hqcS9XpeJ_mDFog70CM-b3jh1bOhbr3Ka8O6_5AbExUxSQS3fOuEHQBfINBTK9Gu7-RFzPJ4obn72RCdQHHJRbqG8u5WYK1KYfJM5YTqQMujvvwM-QQHdOZ2eB9wBWK5ZT_HINsrKEIp5GGExPNUnO-3slIllQ5aTqzXjWUkdlqxLQV2DbKG4QKJhCzcn1hKDv_Cp_1W00
 
-### 1.3. Какие данные, когда и между кем
+### 1.4. Какими данными обмениваются системы
 
 | # | Момент | От → Кому | Данные |
 |---|---|---|---|
@@ -53,20 +67,25 @@ https://www.plantuml.com/plantuml/uml/ZLL1InjT5Ds_Nt5nPVYKm4TNBefWCNGNo28RDwdDGg
 | 11 | В полете | Бортпроводник → База данных | Статус по каждому заказу: выдано / не выдано (причина); данные передаются после посадки, если связи нет |
 | 12 | После рейса | База данных → Бухгалтерия, Поставщик | Реестр выполненных заказов, акт сверки, суммы к оплате и к возврату |
 
-### 1.4. Ключевые решения и допущения
+### 1.5. Статусы заказа
 
-- **Крайний срок: вылет − 24 ч.** Заявку поставщику лучше отправлять одним пакетом сразу после cut-off, а не по каждому заказу.
-- **Изменения рейса:** при переносе более чем на N часов заказ сохраняется, поставщик уведомляется. При отмене рейса заказ отменяется автоматически с возвратом.
-- **Невыдача по вине авиакомпании или поставщика:** возврат клиенту автоматически, по акту.
-- **Пассажир не явился на рейс:** возврат по правилам услуги (уточнить у бизнеса).
-- **Оффлайн на борту:** выдача фиксируется локально, синхронизация после посадки.
+<img src="media/image1.png" style="width:7.61863in;height:2.04819in" />
 
-**Вопросы**
+https://www.plantuml.com/plantuml/uml/bLHDYzDG5DtVN_7MGZVYoeLCJ5ubaYOXJGLH2Q8p88mZQ6RVpe0VT54Gr9Nw5zhQQ3Kc_eNx_f7t45vAQehCekJTnpddddjpcgDN-UEN-VdpKygVvQV7YZ_obdzmnONyAZFddygybgjVN2gvNyfXYQVYFxmr5r9KybmGFRZsI0q6jvIRQ2VLdhgf-9E5ApFZMbWRm8ai1F3OkJ_IOPh5ElJyy0veNqIwv2N45LToUDCKHFlWHi3tzbdcqioaBCnRy7jfzcxe-85k10IzvHKSAwwjcfaJTR07RNyLqbhQrsRASBreLU2fJyHrGbS7jhsWVdC1QcVHQE__3x_XMZqvpmSlJavsy37QfL4sdiHnuEi4hC_YPYPJNUBrSMb93y_ImVKRoc3JC_JyXmj1MsHk50xzP2H6chaXoKkP_XsI8j4mKpbKPj49JRzeekzgDpqeLKifsUCQEUlAKKjjT8QJq6jqtYDjeZ75xYLySYXu0sbU4_MC0G5F1_uzdLWdRRYvm7vRO-85IwzfXmSx2hFRaPFqaU7ucvdAphytLDMyj1MYOYw8MYw4_F5uqkjXRURY0sNTPOHHcXraLVjK0jG6C1h5WPODajMuyZ9tcTpdVP0abRoLEQLxsVbJ8M4j53pvU51hfhsXe-Epf_Wq_GK0
 
-1. Возвратная ли услуга и на каких условиях?
-2. Один поставщик на все аэропорты или несколько?
-3. Нужен ли заказ для рейсов с пересадкой (сегменты)?
-4. Как поставщик получает заявку: API, EDI, портал или email?
+
+### 1.6. Ключевые решения и допущения
+
+- Заказ можно оформить не позднее чем за 24 часа до планового времени вылета.
+- Заказ должен быть связан с конкретным бронированием, рейсом и пассажиром.
+- Передача поставщику происходит только после успешной оплаты.
+- При передаче заказа поставщику используется уникальный ID заказа, чтобы исключить дублирование.
+- Поставщик должен подтвердить получение заказа.
+- Заказ должен быть доставлен до установленного времени, чтобы питание оказалось на борту к вылету.
+- Бортпроводник должен видеть, какому пассажиру и на каком месте предназначен конкретный заказ.
+- После выдачи заказ переводится в финальный статус «Выдан».
+- Для каждого изменения статуса желательно хранить время изменения и источник изменения.
+
 
 ---
 
@@ -161,42 +180,6 @@ flowchart TD
 
 
 
-@startuml
-title Жизненный цикл заказа питания
-
-[*] --> CREATED : Заказ создан
-
-CREATED --> PAYMENT_PENDING : Оплата начата
-
-PAYMENT_PENDING --> PAID : Оплата успешна
-PAYMENT_PENDING --> PAYMENT_FAILED : Ошибка оплаты
-
-PAYMENT_FAILED --> PAYMENT_PENDING : Повторная оплата
-PAYMENT_FAILED --> CANCELLED : Отмена заказа
-
-PAID --> CANCELLED : Отмена до cut-off
-PAID --> SENT_TO_SUPPLIER : Наступил cut-off\nT-24 часа
-
-SENT_TO_SUPPLIER --> SUPPLIER_CONFIRMED : Поставщик принял заказ
-SENT_TO_SUPPLIER --> REJECTED : Поставщик отклонил заказ
-
-REJECTED --> REFUNDED : Возврат средств
-
-SUPPLIER_CONFIRMED --> DELIVERED : Питание доставлено
-DELIVERED --> ON_BOARD : Питание загружено на борт
-
-ON_BOARD --> ISSUED : Питание выдано
-ON_BOARD --> NOT_ISSUED : Питание не выдано
-
-ISSUED --> COMPLETED
-NOT_ISSUED --> REFUNDED : Возврат средств
-
-CANCELLED --> REFUNDED : Если была оплата
-
-REFUNDED --> [*]
-COMPLETED --> [*]
-
-@enduml
 
 
 ```plantuml
