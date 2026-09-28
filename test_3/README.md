@@ -30,7 +30,7 @@
 
 ### 1.2. Схема взаимодействия (целевой процесс)
 
-''' @startuml
+``` @startuml
 autonumber
 
 actor "Клиент" as C
