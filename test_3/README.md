@@ -120,7 +120,7 @@
 ## 1.3. Диаграмма последовательности
 
 
-<img src="media/image1.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image1.png" />
 
 
 
@@ -157,7 +157,7 @@
 
 ## 1.5. Статусы заказа
 
-<img src="media/image2.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image2.png" />
 
 
 
@@ -435,12 +435,12 @@
 
 # 8. Диаграмма последовательности
 
-<img src="media/image4.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image4.png"  />
 
 
 # 9. Диаграмма бизнес-процесса
 
-<img src="media/image5.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image5.png"  />
 
 
 
