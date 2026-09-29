@@ -99,7 +99,7 @@
 
 **Риск при ошибке:** если включить маркировку на артикуле, где уже есть немаркированные остатки или другие немаркированные поставщики, два режима учёта смешаются в одном артикуле.
 
-<img src="media/image1.png" style="width:7.90361in;height:2.36897in" />
+<img src="media/image1.png" />
 
 ## 6 TO-BE
 
@@ -121,7 +121,7 @@
 
 **Метрика успеха:** сокращение времени от отвязки до создания/привязки корректного артикула; снижение числа позиций, «зависающих» без обработки; доля задач на разбор, закрытых без обращения к ручному поиску (UC-01).
 
-<img src="media/image2.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image2.png" />
 
 
 
@@ -364,12 +364,12 @@
 ### Sequence Diagram
 
 
-<img src="media/image4.png" style="width:7.90361in;height:2.36897in" />
+<img src="media/image4.png"  />
 
 
 ### Диаграмма состояний 
 
-<img src="media/image5.png" style="width:7.90361in;height:2.36897in" />
+<img src="media/image5.png"  />
 
 
 
