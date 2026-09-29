@@ -377,7 +377,7 @@
 
 # 6. Состояния задания на доставку
 
-<img src="media/image3.png" style="width:7.61863in;height:2.04819in" />
+<img src="media/image3.png"  />
 
 
 # 7. Основные сценарии
